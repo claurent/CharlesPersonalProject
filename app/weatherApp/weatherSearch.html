@@ -2,6 +2,11 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <!--<h2>Type in the city you want to search for</h2>-->
+        <div class="alert alert-danger" ng-show="errorMessage">
+            <strong>Error code {{errorMessage
+                .code}}: </strong>{{errorMessage.message}}
+        </div>
+
         <form role="form" ng-submit="searchWeather()">
             <div class="form-group">
                 <label for="cityName">City name:</label>
@@ -10,6 +15,7 @@
             </div>
             <div>
                 <button type="submit" class="btn btn-primary">Search</button>
+                <a ng-click="getLocation()">Get current Location</a>
             </div>
         </form>
     </div>
